@@ -1,0 +1,67 @@
+ .navbar-brand {
+    font-weight: bold;
+    font-size: clamp(1.5rem, 5vw, 2rem); /* Slightly larger for emphasis */
+    text-decoration: none !important;
+    color: #E51515 !important; /* Vibrant red color */
+    font-family: 'Georgia', serif; /* Elegant serif font */
+    letter-spacing: 2px; /* Add spacing for a premium look */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+           
+        }
+
+ .nav-link {
+    font-size: 1.1rem;
+    text-decoration: none !important;
+    color: white !important;
+     }
+
+    .nav-link:hover {
+        color: #E51515 !important;
+    }
+
+
+.form-control {
+    width: 200px;
+  }
+
+  nav {
+    padding: 10px 0;
+  }
+
+  .searchInput {
+    width: 300px !important;
+
+  }
+  .searchInput:focus {
+    /* Change border to red */
+    border-color: transparent !important;
+    box-shadow: 0 0 5px #E51515; /* Apply a red box shadow */
+}
+
+  .username-btn:hover{
+    background-color: transparent !important; /* Prevents background change */
+    color: #f8f9fa; /* Ensures text color remains visible */
+    border-color: #f8f9fa; /* Maintains the outline color */
+  }
+  @media (max-width: 992px) {
+    .searchInput {
+      width: 300px !important;
+    }
+    .leftSideLinks {
+      display: flex;
+      flex-direction: column-reverse !important;
+      align-items: flex-start !important;
+      gap: 20px;
+      padding-bottom: 20px;
+
+    }
+  }
+
+
+  .listnav{
+    background-color: white !important;
+  }
+
+
+
+ 

@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Rate Your Experience" class="rating-card movie-container">
+        <div class="stars-container ">
+            <template for:each={starIcons} for:item="star">
+                <lightning-icon
+                    key={star.value}
+                    icon-name={star.iconName}
+                    alternative-text="Star Rating"
+                    onclick={handleStarClick}
+                    data-star={star.value}
+                    class="star-icon"
+                ></lightning-icon>
+            </template>
+        </div>
+
+        <textarea class="review-text" placeholder="Share details of your own experience at this place" 
+                  value={reviewText} 
+                  oninput={handleReviewInput}>
+        </textarea>
+
+        <div class="action-buttons">
+            <lightning-button label="Submit" variant="brand" onclick={handleSubmit}></lightning-button>
+            <lightning-button label="Cancel" variant="neutral" onclick={handleCancel}></lightning-button>
+        </div>
+    </lightning-card>
+</template>
+

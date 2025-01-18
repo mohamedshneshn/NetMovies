@@ -1,0 +1,42 @@
+.Results {
+    
+    border: 1px solid #d8dde6;
+    border-radius: 3px;
+    margin: 20px auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+   
+    
+}
+@media (max-width: 577) {
+    .Results {
+        margin-right: 2px !important;
+        margin-left: 2px !important
+    }
+}
+
+
+
+.moviecard {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+
+@media (max-width: 480px) {
+    .moviecard {
+        flex: 0 0 50%; /* 50% width for two items per row */
+        max-width: 50%; /* Prevent shrinking */
+    }
+}
+
+.no-results {
+    
+    font-size: 1.5rem;
+    color: #d8dde6;
+   
+}
+

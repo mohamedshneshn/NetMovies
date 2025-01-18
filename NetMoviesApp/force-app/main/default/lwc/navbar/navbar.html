@@ -1,0 +1,55 @@
+<template>
+       <nav class="navbar navbar-expand-lg movie-container navbar-dark bg-dark" data-bs-theme="dark" >
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" onclick={navigateToHome}>NetMovies</a>
+            <button class="navbar-toggler" onclick={handleMenuToggle} type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Movies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">TV Shows</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center leftSideLinks">
+                    <input class="form-control searchInput me-4" type="search" placeholder="Search Movies, TV shows and more" aria-label="Search" onchange={handleSearchInput}>
+                     <!-- Conditionally Render Buttons -->
+                    <template if:false={isLoggedIn}>
+                        <div>
+                           <button class="btn btn-outline-light me-2" type="button" onclick={navigateToRegister}>Register</button>
+                           <button class="btn btn-outline-light" type="button" onclick={navigateToSignIn}>Sign In</button>
+                        </div>
+                    </template>
+                    <template if:true={isLoggedIn}>
+                        <div class="slds-dropdown-trigger slds-dropdown-trigger_hover">
+                                <button class="btn btn-outline-light username-btn" type="button">
+                                      Hi, {loggedInUserName}
+                                    <svg class="slds-button__icon slds-button__icon_x-small ms-2" aria-hidden="true">
+                                        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
+                                    </svg>
+                                </button>
+                                <div class="slds-dropdown slds-dropdown_right slds-dropdown_actions listnav">
+                                    <ul class="slds-dropdown__list" role="menu">
+                                        <li class="slds-dropdown__item" role="presentation">
+                                            <a href="javascript:void(0);" role="menuitem" onclick={handleLogout}>
+                                                <span class="slds-truncate" title="Logout">Logout</span>
+                                            </a>
+                                        </li>
+                                        <li class="slds-dropdown__item" role="presentation">
+                                            <a href="javascript:void(0);" role="menuitem" onclick={handleWatchedMovies}>
+                                                <span class="slds-truncate" title="Watched Movies">Watched Movies</span>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                       </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </nav>
+</template>

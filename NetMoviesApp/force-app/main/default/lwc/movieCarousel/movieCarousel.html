@@ -1,0 +1,18 @@
+<template>
+    <!-- Swiper Main Container -->
+    <div class="swiper-container">
+        <!-- Wrapper for the slides -->
+        <div class="swiper-wrapper">
+            <!-- Dynamically render the movies in slides -->
+            <template for:each={movies} for:item="movie">
+                <div key={movie.id} class="swiper-slide">
+                    <c-movie-card movie={movie}></c-movie-card>
+                </div>
+            </template>
+        </div>
+
+        <!-- Navigation buttons for Swiper -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+</template>

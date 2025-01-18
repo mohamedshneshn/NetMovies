@@ -1,0 +1,35 @@
+.movie-card {
+     text-align: center;
+    /* width: 250px; */
+    height: auto; 
+}
+
+.movie-card h2 {
+    font-size: clamp(0.5rem, 5vw, 1rem);
+    font-weight: bold;
+    text-align: center;
+    margin: 16px 0;
+    color: white;
+
+    /* Ensure the title wraps to the next line */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal; /* Allows wrapping */
+    max-width: 250px; /* Matches the card's width */
+    line-height: 1.2; /* Adjust line spacing for better readability */
+    
+}
+
+.movie-card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card on hover */
+    transition: transform 0.1s;
+}
+
+.movie-card img {
+    max-height: 100%; /* Ensure height does not exceed the container */
+    max-width: 100%;  /* Ensure width does not exceed the container */
+    border-radius: 8px;
+     /* Maintain the aspect ratio of the image */
+    object-fit: cover; /* Ensures the image fits within the space without distorting */
+}
+

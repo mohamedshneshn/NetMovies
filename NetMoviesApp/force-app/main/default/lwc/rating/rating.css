@@ -1,0 +1,33 @@
+.rating-card {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.rating-card{
+
+    background-color: #fff;
+}
+.star-icon {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+}
+
+.review-text {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    resize: none;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+}

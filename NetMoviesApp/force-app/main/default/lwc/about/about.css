@@ -1,0 +1,39 @@
+.about-section {
+    color: #333;
+    
+}
+
+
+
+.about-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.about-tagline {
+    font-size: 1.5rem;
+    color: #777;
+    margin-bottom: 1.5rem;
+}
+
+.about-content {
+    margin-bottom: 2rem;
+}
+
+.about-features {
+    list-style-type: none;
+    padding: 0;
+    margin: 30px 0;
+}
+
+.about-features li {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.about-cta lightning-button {
+    margin-top: 1rem;
+}
+
+

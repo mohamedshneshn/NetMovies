@@ -1,0 +1,71 @@
+.footer-container {
+    background-color: #343a40;
+    color: white;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    border-bottom: 2px solid white;
+    display: inline-block;
+}
+
+.footer-section p {
+    font-size: 0.9rem;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    
+     color: white;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #e51515;
+}
+
+ .social-icons i {
+            color: white !important; /* Makes the icons white */
+            font-size: 2.5rem !important; /* Makes the icons bigger */
+            margin: 0 20px 0 0 !important; /* Adds spacing between icons */
+            transition: transform 0.3s ease; /* Smooth animation on hover */
+        }
+
+        .social-icons i:hover {
+            transform: scale(1.2); /* Slightly enlarges the icon on hover */
+            color: #E51515; /* Optional: Changes color on hover */
+        }
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.8rem;
+}

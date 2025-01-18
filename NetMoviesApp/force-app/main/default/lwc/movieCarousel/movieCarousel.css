@@ -1,0 +1,47 @@
+
+body {
+    overflow: hidden;
+}
+
+.swiper-container {
+  
+    width: 100%;
+    overflow-x: auto; /* Allow horizontal scrolling for images */
+    overflow-y: hidden; /* Prevent vertical scrolling */
+    white-space: nowrap; /* Ensure slides align in a single row */
+  
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.swiper-button-prev,
+.swiper-button-next {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    position: absolute !important; /* Force positioning relative to .swiper-container */
+    top: 50% !important; /* Center vertically */
+    transform: translateY(-50%) !important; /* Adjust for centering */
+    z-index: 10 !important; /* Ensure it appears above other content */
+}
+
+.swiper-button-prev {
+    left: 10px !important; /* Adjust the horizontal position */
+}
+
+.swiper-button-next {
+    right: 10px !important; /* Adjust the horizontal position */
+}
+
+/* Hide scroll bar */
+.swiper-container::-webkit-scrollbar {
+    display: none; /* For WebKit browsers */
+}

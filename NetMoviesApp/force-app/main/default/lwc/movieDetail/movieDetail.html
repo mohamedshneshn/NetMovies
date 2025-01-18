@@ -1,0 +1,117 @@
+<template>
+    <div class="movie-container movie-detail-container">
+        <template if:true={movieId}>
+            <div class="slds-grid slds-wrap grid-container">
+                <!-- Movie Image and Actions -->
+                <div class=" slds-col slds-size_12 slds-medium-size_4-of-12 slds-large-size_4-of-12 movie-section image-section ">
+                    <img src={movie.imageUrl} alt={movie.title} class="responsive-image" />
+                    <div class="movie-actions mt-3">
+                        <button class="btn btn-secondary"  type="button" onclick={handleLike}>{likeButtonLabel}</button>
+                            <div class="review-container" style="position: relative;">
+
+                            <button class="btn btn-secondary"  type="button" onclick={handleReview}>Write a Review</button>
+                         
+                            <!-- Modal -->
+                            <template if:true={showCommentModal}>
+                                <div class="modal">
+                                    <div class="review-content">
+                                        <h3>Rate this Movie</h3>
+                                        <!-- Star Rating -->
+                                        <div class="star-rating">
+                                            <template for:each={computedStars} for:item="star">
+                                               <span
+                                                    key={star.value}
+                                                    class={star.class}
+                                                    onclick={selectRating}
+                                                     data-value={star.value}
+                                                     onmouseover={hoverRatingHandler}
+                                                     onmouseleave={clearHoverRating}
+                                                     
+                                                   
+                                                >
+                                                    ★
+                                                </span>
+                                            </template>
+                                        </div>
+                                        <!-- Display Selected Rating -->
+                                        <p>Selected Rating: {selectedRating} / 5</p>
+                                        <!-- Comment -->
+                                        <textarea
+                                            placeholder="Write your review here..."
+                                            value={userComment}
+                                            oninput={handleCommentChange}
+                                        ></textarea>
+                                        <div class="d-flex justify-content-between pt-2 pb-2">
+                                            <button class="btn btn-secondary"  type="button" onclick={handleCommentSubmit}>Submit</button>
+                                            <button class="btn btn-secondary"  type="button" onclick={closeModal}>Cancel</button>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                    <template if:true={showSignInMessage}>
+                        <div class="sign-in-message">
+                            <p>You need to sign in!</p>
+                            <p>Please sign in to save your ratings.</p>
+                        </div>
+                    </template>
+
+                </div>
+
+                <!-- Movie Info -->
+                <div class="slds-col slds-size_12 slds-medium-size_8-of-12 slds-large-size_8-of-12 movie-section info-section">
+                      <h1 class="movie-title">{movie.title}</h1>
+                      <div class="movie-rating">
+                            <span class="rating-stars">
+                                <!-- Render filled stars -->
+                                <template for:each={filledStars} for:item="star">
+                                    <span key={star} class="star filled">★</span>
+                                </template>
+                                <!-- Render half star if applicable -->
+                                <template if:true={hasHalfStar}>
+                                    <span class="star half">★</span> <!-- Use a half-star character or SVG -->
+                                </template>
+
+                                <!-- Render empty stars -->
+                                <template for:each={emptyStars} for:item="star">
+                                    <span key={star} class="star empty">★</span>
+                                </template>
+                            </span>
+                        <span class="rating-value">{formattedRating}</span>
+                    </div>
+                     
+                    <p class="movie-overview">{movie.overview}</p>
+                   
+                    <div class="movie-details">
+                        <div class="movie-detail">
+                            <span class="detail-label1">Release Date:</span>
+                            <span class="detail-value">{movie.releaseDate}</span>
+                        </div>
+
+                        <div class="movie-detail">
+                            <span class="detail-label2">Genre :</span>
+                            <span class="detail-value">{movie.genre}</span>
+                        </div>
+                       
+                        <div class="movie-detail">
+                            <span class="detail-label3">Language:</span>
+                            <span class="detail-value">{movie.language}</span>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                       <button class="btn btn-secondary "  type="button" onclick={handleWatch}>{watchButtonLabel}</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </template>
+
+        <template if:false={movieId}>
+            <p class="no-selection">No movie selected. Please select a movie to view details.</p>
+        </template>
+    </div>
+</template>
+
+

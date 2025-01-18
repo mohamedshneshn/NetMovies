@@ -1,0 +1,54 @@
+.container-more-reasons {
+    text-align: center;
+    padding: 2rem;
+    background-color: #1e1e30;
+    color: #fff;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: linear-gradient(145deg, #2d2d3d, #1a1a2a);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
+    width: 20rem;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.icon-container {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.icon {
+    height: 50px;
+    width: auto;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #b0b0b0;
+}

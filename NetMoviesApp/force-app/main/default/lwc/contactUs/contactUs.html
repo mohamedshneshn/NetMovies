@@ -1,0 +1,54 @@
+<template>
+    <div class="movie-container contact-section">
+        <h1 class="contact-title">Contact Us</h1>
+        <div class="slds-m-bottom_small">
+            <p>If you have any questions or need support, please feel free to reach out to us using the form below or through other methods:</p>
+        </div>
+
+        <lightning-input
+            label="Name"
+            placeholder="Enter your name"
+            value={name}
+            onchange={handleNameChange}>
+        
+        </lightning-input>
+
+        <lightning-input
+            label="Email"
+            placeholder="Enter your email"
+            type="email"
+            value={email}
+            onchange={handleEmailChange}>
+        </lightning-input>
+
+        <lightning-textarea
+            label="Message"
+            placeholder="Enter your message"
+            value={message}
+            onchange={handleMessageChange}>
+        </lightning-textarea>
+
+        <p class="slds-m-top_medium">
+            Alternatively, you can contact us through:
+        </p>
+
+        <ul class="slds-m-bottom_medium">
+            <li>
+                <lightning-icon icon-name="utility:call" size="small" alternative-text="Phone"></lightning-icon> Phone: +1-800-555-1234
+            </li>
+            <li>
+                <lightning-icon icon-name="utility:email" size="small" alternative-text="Email"></lightning-icon> Email: support@netmovies.com
+            </li>
+            <li>
+                <lightning-icon icon-name="utility:chat" size="small" alternative-text="Live Chat"></lightning-icon> Live Chat: Available on our website
+            </li>
+        </ul>
+
+         <div class="about-cta mt-4">
+                <a href="/" target=""  >
+                    <button class="main-button">Submit</button>
+                </a>
+            </div>
+    </div>
+</template>
+

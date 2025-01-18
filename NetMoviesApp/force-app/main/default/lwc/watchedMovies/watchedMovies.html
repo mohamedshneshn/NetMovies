@@ -1,0 +1,31 @@
+<template>
+    <div class="Results movie-container">
+        <c-movie-header header-text="Watched Movies"></c-movie-header>
+        <template if:true={movies}>
+            <template if:true={movies.length}>
+                <!-- Use SLDS grid system for responsiveness -->
+                <div class="slds-grid slds-wrap">
+                    <!-- Iterate through movies to display each movie card -->
+                    <template for:each={movies} for:item="movie">
+                        <div key={movie.id} 
+                             class="slds-col slds-large-size--1-of-6 slds-medium-size--1-of-4 slds-small-size--1-of-2 slds-p-horizontal--small moviecard">
+                            <c-movie-card movie={movie}></c-movie-card>
+                        </div>
+                    </template>
+                </div>
+            </template>
+            <template if:false={movies.length}>
+                <!-- Show a message when no movies are found -->
+                <div class="no-results">
+                    <p>No movies found.</p>
+                </div>
+            </template>
+        </template>
+        <template if:false={movies}>
+            <!-- Handle loading or error state -->
+            <div class="loading">
+                <p>Loading search results...</p>
+            </div>
+        </template>
+    </div>
+</template>
